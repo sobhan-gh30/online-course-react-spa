@@ -6,8 +6,7 @@ const Header = () => {
     // لینک‌های هدر
     const navLinks = [
         { id: 1, name: 'خانه', href: '#' },
-        { id: 2, name: 'محصولات', href: '#' },
-        { id: 3, name: 'تماس با ما', href: '#' }
+        { id: 2, name: 'دوره ها', href: '#' },
     ];
 
     const handleSearch = (e) => {
