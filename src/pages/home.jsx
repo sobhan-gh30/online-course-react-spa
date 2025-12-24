@@ -2,61 +2,6 @@ import React from 'react';
 import { motion } from "motion/react"
 
 export default function Home(){
-    // دیتای تستی برای دوره‌های پرفروش
-    const topCourses = [
-        { id: 1, title: 'طراحی رابط کاربری پیشرفته', instructor: 'علی محمدی', price: '۱,۲۰۰,۰۰۰ تومان', students: 1245, rating: 4.9 },
-        { id: 2, title: 'توسعه وب با React', instructor: 'سارا احمدی', price: '۹۸۰,۰۰۰ تومان', students: 2156, rating: 4.8 },
-        { id: 3, title: 'هوش مصنوعی و یادگیری ماشین', instructor: 'رضا کریمی', price: '۱,۵۰۰,۰۰۰ تومان', students: 987, rating: 4.9 },
-        { id: 4, title: 'مدیریت پروژه‌های نرم‌افزاری', instructor: 'مریم جعفری', price: '۸۵۰,۰۰۰ تومان', students: 1678, rating: 4.7 },
-    ];
-
-    // دیتای تستی برای دسته‌بندی‌ها
-    const categories = [
-        { id: 1, name: 'برنامه‌نویسی', count: 42, icon: '💻' },
-        { id: 2, name: 'طراحی UI/UX', count: 28, icon: '🎨' },
-        { id: 3, name: 'علم داده', count: 19, icon: '📊' },
-        { id: 4, name: 'مدیریت کسب‌وکار', count: 35, icon: '📈' },
-        { id: 5, name: 'زبان‌های خارجی', count: 31, icon: '🌐' },
-        { id: 6, name: 'مهارت‌های فردی', count: 27, icon: '🚀' },
-    ];
-
-    // انیمیشن‌های فریمر موشن
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 12
-            }
-        }
-    };
-
-    const cardHoverVariants = {
-        hover: {
-            y: -10,
-            scale: 1.02,
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20
-            }
-        }
-    };
-
     return (
         <div className="min-h-screen">
 
