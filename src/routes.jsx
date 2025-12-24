@@ -1,16 +1,11 @@
 import {createBrowserRouter} from "react-router";
 import {Outlet} from "react-router/internal/react-server-client";
+import RootLayout from "./components/Layouts/layouts.jsx";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: (
-            <div>
-                home
-                <br/><hr/>
-                <Outlet/>
-            </div>
-        ),
+        element: <RootLayout/>,
         children:[
             {
                 index: true,
