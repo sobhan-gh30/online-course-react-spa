@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router";
-import {Outlet} from "react-router/internal/react-server-client";
 import RootLayout from "./components/Layouts/layouts.jsx";
+import Home from "./pages/home.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
         children:[
             {
                 index: true,
-                element: <div>index page</div>
+                element: <Home/>,
             },
             {
                 path: "/courses",

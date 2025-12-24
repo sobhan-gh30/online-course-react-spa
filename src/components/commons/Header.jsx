@@ -18,8 +18,8 @@ const Header = () => {
     };
 
     return (
-        <header className="sticky top-2 z-50 w-11/12 rounded-xl mx-auto backdrop-blur-md bg-zinc-900/60  border-b border-white/20 shadow-lg">
-            <div className="container mx-auto px-4 py-3">
+        <header className="fixed top-2 z-50 w-full">
+            <div className="container rounded-xl mx-auto backdrop-blur-md bg-zinc-900/60  border-b border-white/20 shadow-lg px-4 py-3">
                 <div className="flex items-center justify-between">
                     <div className={"flex gap-8"}>
                         {/* بخش لوگو */}
