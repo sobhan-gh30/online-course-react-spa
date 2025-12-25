@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-export default function CourseCart({title, instructor, rating, students, price,}){
+export default function CourseCart({title, instructor, rating, students, price, img}){
 
 
     const itemVariants = {
@@ -26,8 +26,8 @@ export default function CourseCart({title, instructor, rating, students, price,}
               hover:border-emerald-500/30 p-6
                flex flex-col transition-all duration-300">
                 <div className="mb-4">
-                    <div className="w-full h-40 bg-gradient-to-br from-emerald-900/30 to-green-900/20 rounded-xl mb-4 flex items-center justify-center">
-                        <span className="text-4xl">📚</span>
+                    <div className="w-full h-40 bg-gradient-to-br from-emerald-900/30 to-green-900/20 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                            <img src={`./images/${img}`} alt=""/>
                     </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-green-300 transition-colors">
                         {title}
