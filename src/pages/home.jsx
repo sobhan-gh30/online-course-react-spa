@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from "motion/react"
 import Button from "../components/commons/btn.jsx";
+import HomeAnalytics from "../components/commons/home/homeAnalytics.jsx";
 
 export default function Home(){
     return (
@@ -53,24 +54,13 @@ export default function Home(){
                     transition={{ delay: 1, duration: 0.8 }}
                     className="container mx-auto mt-20"
                 >
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
                         {[
-                            { number: '۱۵,۰۰۰+', label: 'دانشجو' },
-                            { number: '۳۲۰+', label: 'دوره آموزشی' },
-                            { number: '۵۰+', label: 'مدرس حرفه‌ای' },
-                            { number: '۹۸%', label: 'رضایت‌مندی' }
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                whileHover={{ scale: 1.05 }}
-                                className="text-center p-6 rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10"
-                            >
-                                <div className="text-3xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">
-                                    {stat.number}
-                                </div>
-                                <div className="text-gray-400 mt-2">{stat.label}</div>
-                            </motion.div>
-                        ))}
+                            {item:1 , number: '۱۵,۰۰۰+', label: 'دانشجو' },
+                            {item:2 , number: '۳۲۰+', label: 'دوره آموزشی' },
+                            {item:3 , number: '۵۰+', label: 'مدرس حرفه‌ای' },
+                            {item:4 , number: '۹۸%', label: 'رضایت‌مندی' }
+                        ].map(item =><HomeAnalytics {...item} key={item.id} />)}
                     </div>
                 </motion.div>
             </section>
