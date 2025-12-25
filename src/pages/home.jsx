@@ -1,9 +1,49 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { motion } from "motion/react"
 import Button from "../components/commons/btn.jsx";
 import HomeAnalytics from "../components/commons/home/homeAnalytics.jsx";
+import CourseCart from "../components/commons/home/courseCart.jsx";
+import courses from "../data/courses.js"
+
+
+
 
 export default function Home(){
+
+    const [allCourses, setAllCourses] = useState([]);
+    const [topCourses, setTopCourses] = useState([]);
+
+    useEffect(() => {
+        // 1. جمع کردن همه دوره‌ها
+        const all = courses.flatMap(category => category.courses);
+
+        // 2. مرتب‌سازی و گرفتن ۴ تای برتر
+        const top = [...all]
+            .sort((a, b) => b.students - a.students)
+            .slice(0, 4);
+
+        setAllCourses(all);
+        setTopCourses(top);
+
+    }, []);
+
+    console.log(allCourses);
+    console.log(topCourses);
+
+
+// انیمیشن‌های فریمر موشن
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+
     return (
         <div className="min-h-screen">
 
@@ -65,6 +105,53 @@ export default function Home(){
                 </motion.div>
             </section>
 
+            {/* بخش پرفروش‌ترین دوره‌ها */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.9 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold mb-4">
+                            <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                                پرفروش‌ترین دوره‌ها
+                            </span>
+                        </h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            محبوب‌ترین دوره‌های آموزشی که توسط هزاران دانشجو انتخاب شده‌اند
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    >
+                        {
+                             topCourses.map((item)=>{
+                                return <span key={item.id}><CourseCart {...item} /></span>;
+                        })
+                        }
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className="text-center mt-12"
+                    >
+                        <button className="px-8 py-3 border border-emerald-500/50 hover:bg-emerald-900/30 rounded-xl font-bold text-lg backdrop-blur-sm transition-all duration-300">
+                            مشاهده همه دوره‌ها
+                        </button>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     );
 };
