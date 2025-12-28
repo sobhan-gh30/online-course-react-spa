@@ -112,7 +112,6 @@ export default function Home(){
                 </motion.div>
             </section>
 
-
             {/* بخش دسته‌بندی‌ها */}
             <section className="py-20 px-4">
                 <div className="container mx-auto">
@@ -146,7 +145,6 @@ export default function Home(){
                     </motion.div>
                 </div>
             </section>
-
 
             {/* بخش پرفروش‌ترین دوره‌ها */}
             <section className="py-20 px-4">
@@ -194,6 +192,52 @@ export default function Home(){
                         </button>
                     </motion.div>
                 </div>
+            </section>
+
+            {/* بخش CTA پایانی */}
+            <section className="py-20 px-4">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className="container mx-auto max-w-4xl"
+                >
+                    <div className="rounded-3xl overflow-hidden relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/30 to-green-900/20"></div>
+                        <div className="relative z-10 p-12 text-center">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-4xl font-bold mb-6"
+                            >
+                <span className="bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">
+                  همین امروز یادگیری را شروع کنید
+                </span>
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
+                            >
+                                به جمع هزاران دانشجوی ما بپیوندید و مسیر شغلی خود را متحول کنید
+                            </motion.p>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4 }}
+                            >
+                                <Button> مشاهده دوره ها </Button>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
             </section>
         </div>
     );
