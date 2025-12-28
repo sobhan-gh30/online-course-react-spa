@@ -3,6 +3,7 @@ import RootLayout from "./components/Layouts/layouts.jsx";
 import Home from "./pages/home.jsx";
 import Courses from "./pages/courses.jsx";
 import Categories from "./pages/categories.jsx";
+import CoursePage from "./pages/coursePage.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/courses/:category/:id",
-                element: <div>Course id</div>
+                element: <CoursePage/>
             },
             {
                 path: "*",
