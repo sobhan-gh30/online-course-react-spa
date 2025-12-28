@@ -4,6 +4,7 @@ import Home from "./pages/home.jsx";
 import Courses from "./pages/courses.jsx";
 import Categories from "./pages/categories.jsx";
 import CoursePage from "./pages/coursePage.jsx";
+import NotFound from "./pages/notFound.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "*",
-                element: <div>not Found</div>
+                element: <NotFound/>
             }
         ]
 
