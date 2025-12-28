@@ -187,9 +187,7 @@ export default function Home(){
                         transition={{ delay: 0.5 }}
                         className="text-center mt-12"
                     >
-                        <button className="px-8 py-3 border border-emerald-500/50 hover:bg-emerald-900/30 rounded-xl font-bold text-lg backdrop-blur-sm transition-all duration-300">
-                            مشاهده همه دوره‌ها
-                        </button>
+                       <Button solid={false}>همه دوره ها</Button>
                     </motion.div>
                 </div>
             </section>
