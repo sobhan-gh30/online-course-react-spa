@@ -1,16 +1,39 @@
-# React + Vite
+# 🎓 Educational Platform Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+یک صفحه لندینگ مدرن برای پلتفرم آموزشی آنلاین که با تمرکز روی تجربه کاربری، انیمیشن‌های نرم و طراحی مینیمال پیاده‌سازی شده است.
 
-Currently, two official plugins are available:
+این پروژه با **React** توسعه داده شده و برای انیمیشن‌ها از **Framer Motion** و برای استایل‌دهی از **Tailwind CSS** استفاده می‌کند.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎯 طراحی لندینگ حرفه‌ای و ریسپانسیو
+- ⚡ انیمیشن‌های نرم و چشم‌نواز با Framer Motion
+- 📚 نمایش دسته‌بندی‌های آموزشی
+- 🔥 نمایش پرفروش‌ترین دوره‌ها بر اساس تعداد دانشجو
+- 🧩 کامپوننت‌بندی تمیز و قابل توسعه
+- 🌙 طراحی مدرن با Tailwind CSS
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **React**
+- **React Router**
+- **Framer Motion**
+- **Tailwind CSS**
+- JavaScript (ES6+)
+
+---
+
+## 🚀 Getting Started
+
+برای اجرای پروژه به صورت لوکال:
+
+```bash
+# نصب پکیج‌ها
+npm install
+
+# اجرای پروژه
+npm run dev
