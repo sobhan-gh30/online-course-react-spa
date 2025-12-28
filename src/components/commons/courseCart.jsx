@@ -1,7 +1,11 @@
 import { motion } from "motion/react"
 import {Link} from "react-router";
+import {useEffect} from "react";
 export default function CourseCart({id,title, instructor, rating, students, price, img}){
 
+    useEffect(() => {
+
+    }, []);
 
     const itemVariants = {
         hidden: { y: 20, opacity: 0 },
