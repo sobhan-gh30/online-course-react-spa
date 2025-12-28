@@ -33,7 +33,7 @@ const Header = () => {
                         </div>
 
                         {/* بخش ناوبری */}
-                        <nav className="hidden md:flex items-center gap-5">
+                        <nav className="flex items-center gap-5">
                             {navLinks.map((link) => (
                                 <Link
                                     to={link.href}
@@ -45,35 +45,6 @@ const Header = () => {
                                 </Link>
                             ))}
                         </nav>
-                    </div>
-
-                    {/* بخش جستجو */}
-                    <div className="flex items-center">
-                        <form onSubmit={handleSearch} className="relative">
-                            <input
-                                type="text"
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                placeholder="جستجو..."
-                                className="w-full md:w-64 py-1 px-4 rounded
-                                 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-900 focus:border-transparent bg-white/60 backdrop-blur-sm text-gray-800 placeholder-gray-600 "
-                            />
-                            <button
-                                type="submit"
-                                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-emerald-600 dark:hover:text-green-400"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </button>
-                        </form>
-
-                        {/* منوی موبایل */}
-                        <button className="md:hidden ml-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
                     </div>
                 </div>
             </div>
