@@ -5,6 +5,7 @@ import HomeAnalytics from "../components/commons/home/homeAnalytics.jsx";
 import CourseCart from "../components/commons/home/courseCart.jsx";
 import courses from "../data/courses.js"
 import CategoryCart from "../components/commons/home/categoryCart.jsx";
+import {Link} from "react-router";
 
 
 
@@ -25,6 +26,7 @@ export default function Home(){
             .slice(0, 4);
 
         const categoryList = courses.map(category => ({
+            id: category.id,
             name: category.title,       // عنوان دسته‌بندی
             icon: category.icon,        // آیکون دسته‌بندی
             count: category.courses.length  // تعداد دوره‌ها
@@ -88,8 +90,12 @@ export default function Home(){
                             transition={{ delay: 0.7, type: "spring" }}
                             className="flex flex-col sm:flex-row gap-4 justify-center"
                         >
-                          <Button >شروع یادگیری</Button>
-                          <Button solid={false}>مشاهده دوره ها</Button>
+                            <Link to="/courses">
+                              <Button >شروع یادگیری</Button>
+                            </Link>
+                            <Link to="/courses">
+                                <Button solid={false}>مشاهده دوره ها</Button>
+                            </Link>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -140,7 +146,9 @@ export default function Home(){
                         className="flex flex-wrap justify-center gap-6"
                     >
                         {categories.map((category) => (
-                            <CategoryCart key={category.id} {...category} />
+                            <Link to={`/courses/${category.id}`}>
+                                <CategoryCart key={category.id} {...category} />
+                            </Link>
                         ))}
                     </motion.div>
                 </div>
@@ -187,7 +195,11 @@ export default function Home(){
                         transition={{ delay: 0.5 }}
                         className="text-center mt-12"
                     >
-                       <Button solid={false}>همه دوره ها</Button>
+
+                        <Link to="/courses">
+                            <Button solid={false}>همه دوره ها</Button>
+                        </Link>
+
                     </motion.div>
                 </div>
             </section>
@@ -231,7 +243,11 @@ export default function Home(){
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4 }}
                             >
-                                <Button> مشاهده دوره ها </Button>
+
+                                <Link to="/courses">
+                                    <Button>شروع یادگیری</Button>
+                                </Link>
+
                             </motion.div>
                         </div>
                     </div>
