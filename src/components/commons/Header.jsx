@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import {Link} from "react-router";
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // لینک‌های هدر
     const navLinks = [
-        { id: 1, name: 'خانه', href: '#' },
-        { id: 2, name: 'دوره ها', href: '#' },
+        { id: 1, name: 'خانه', href: '/' },
+        { id: 2, name: 'دوره ها', href: '/courses' },
     ];
 
     const handleSearch = (e) => {
@@ -34,15 +35,14 @@ const Header = () => {
                         {/* بخش ناوبری */}
                         <nav className="hidden md:flex items-center gap-5">
                             {navLinks.map((link) => (
-                                <a
-                                    key={link.id}
-                                    href={link.href}
+                                <Link
+                                    to={link.href}
                                     className="text-gray-300 hover:text-green-200 font-medium transition-colors duration-200 relative
                                     after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-green-500 after:left-0 after:-bottom-1 after:transition-all after:duration-300
                                      hover:after:w-full"
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                         </nav>
                     </div>
