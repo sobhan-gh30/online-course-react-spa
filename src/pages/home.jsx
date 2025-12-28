@@ -4,6 +4,7 @@ import Button from "../components/commons/btn.jsx";
 import HomeAnalytics from "../components/commons/home/homeAnalytics.jsx";
 import CourseCart from "../components/commons/home/courseCart.jsx";
 import courses from "../data/courses.js"
+import CategoryCart from "../components/commons/home/categoryCart.jsx";
 
 
 
@@ -12,6 +13,7 @@ export default function Home(){
 
     const [allCourses, setAllCourses] = useState([]);
     const [topCourses, setTopCourses] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         // 1. جمع کردن همه دوره‌ها
@@ -22,13 +24,18 @@ export default function Home(){
             .sort((a, b) => b.students - a.students)
             .slice(0, 4);
 
+        const categoryList = courses.map(category => ({
+            name: category.title,       // عنوان دسته‌بندی
+            icon: category.icon,        // آیکون دسته‌بندی
+            count: category.courses.length  // تعداد دوره‌ها
+        }));
+
         setAllCourses(all);
         setTopCourses(top);
+        setCategories(categoryList);
 
     }, []);
 
-    console.log(allCourses);
-    console.log(topCourses);
 
 
 // انیمیشن‌های فریمر موشن
@@ -104,6 +111,42 @@ export default function Home(){
                     </div>
                 </motion.div>
             </section>
+
+
+            {/* بخش دسته‌بندی‌ها */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold mb-4">
+                          <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                            دسته‌بندی‌های آموزشی
+                          </span>
+                        </h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            دوره‌ها را براساس زمینه‌های تخصصی مختلف جستجو کنید
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="flex flex-wrap justify-center gap-6"
+                    >
+                        {categories.map((category) => (
+                            <CategoryCart key={category.id} {...category} />
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
+
 
             {/* بخش پرفروش‌ترین دوره‌ها */}
             <section className="py-20 px-4">
