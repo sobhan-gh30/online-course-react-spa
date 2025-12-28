@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 import courses from "../data/courses.js"
 import Button from "../components/commons/btn.jsx";
 import HomeAnalytics from "../components/commons/home/homeAnalytics.jsx";
-import CourseCart from "../components/commons/home/courseCart.jsx";
+import CourseCart from "../components/commons/courseCart.jsx";
 import CategoryCart from "../components/commons/home/categoryCart.jsx";
 import {Link} from "react-router";
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import courses from "../data/courses.js";
-import CourseCart from "../components/commons/home/courseCart.jsx";
+import CourseCart from "../components/commons/courseCart.jsx";
 import {motion} from "motion/react";
 
 export default function Courses() {
