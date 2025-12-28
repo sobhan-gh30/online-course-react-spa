@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
-export default function CourseCart({title, instructor, rating, students, price, img}){
+import {Link} from "react-router";
+export default function CourseCart({id,title, instructor, rating, students, price, img}){
 
 
     const itemVariants = {
@@ -44,9 +45,9 @@ export default function CourseCart({title, instructor, rating, students, price, 
                         </div>
                         <div className="text-xl font-bold text-emerald-400">{price}</div>
                     </div>
-                    <button className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-900/40 to-green-900/40 hover:from-emerald-800/60 hover:to-green-800/60 border border-emerald-800/30 font-medium transition-all duration-300">
+                    <Link to={`/courses/${id.toString().slice(0,1)}/${id}`} className="inline-block text-center w-full py-3 rounded-xl bg-gradient-to-r from-emerald-900/40 to-green-900/40 hover:from-emerald-800/60 hover:to-green-800/60 border border-emerald-800/30 font-medium transition-all duration-300">
                         مشاهده جزئیات
-                    </button>
+                    </Link>
                 </div>
             </div>
         </motion.div>
